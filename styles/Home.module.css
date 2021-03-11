@@ -80,6 +80,10 @@
   margin-top: 3rem;
 }
 
+.testClass {
+  color: red;
+}
+
 .card {
   margin: 1rem;
   flex-basis: 45%;

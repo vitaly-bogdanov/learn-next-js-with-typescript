@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
@@ -7,6 +7,9 @@ export default function Home() {
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="ssr старница"/>
+        <meta name="keywords" content="js,next,react"/>
+        <meta charSet="utf-8"/>
       </Head>
 
       <main className={styles.main}>
