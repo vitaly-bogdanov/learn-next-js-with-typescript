@@ -14,7 +14,6 @@ const ClientLayout: FunctionComponent<PropsWithChildren<Props>> = ({title, descr
       <link rel="icon" href="/favicon.ico" />
       <meta name="description" content={description}/>
       <meta name="keywords" content={keywords}/>
-      <meta charSet="utf-8"/>
     </Head>
     <header>
       <nav>
