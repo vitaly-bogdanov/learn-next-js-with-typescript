@@ -4,7 +4,7 @@ import Head from 'next/head';
 type Props = {
   title: string
   description: string
-  keywords: string
+  keywords?: string
 };
 
 const ClientLayout: FunctionComponent<PropsWithChildren<Props>> = ({title, description, keywords, children}) => (
