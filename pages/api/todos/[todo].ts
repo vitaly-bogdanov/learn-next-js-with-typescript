@@ -1,0 +1,18 @@
+import { NextApiRequest, NextApiResponse } from 'next';
+
+type TData = {
+  todo: String
+}
+
+export default (req: NextApiRequest, res: NextApiResponse<TData | void>): void => {
+  if (req.method === 'GET') {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${req.query.todo}`)
+      .then(response => response.json())
+      .then(json => {
+        res.status(200).json(json);
+      });
+  } else {
+    res.setHeader('Allow', ['GET'])
+    res.status(405).end(); // Method Not Allowed
+  }
+}

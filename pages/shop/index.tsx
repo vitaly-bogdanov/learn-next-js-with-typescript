@@ -1,6 +1,5 @@
-import Head from 'next/head';
 import { FunctionComponent } from 'react';
-import Link from 'next/link'
+import Link from 'next/link';
 import ClientLayout from '../../layouts/ClientLayout';
 import styles from './Shop.module.scss';
 
