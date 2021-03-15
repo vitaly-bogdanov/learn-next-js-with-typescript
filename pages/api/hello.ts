@@ -6,10 +6,10 @@ type TData = {
 }
 
 export default (req: NextApiRequest, res: NextApiResponse<TData | void>): void => {
-  if (req.method === 'POST') {
-    res.status(200).json({ message: __filename });
+  if (req.method === 'GET') {
+    res.status(200).json({ message: 'Message from server' });
   } else {
-    res.setHeader('Allow', ['POST'])
+    res.setHeader('Allow', ['GET'])
     res.status(405).end(); // Method Not Allowed
   }
 }

@@ -1,17 +1,15 @@
 import Head from 'next/head';
-import { FunctionComponent } from 'react';
+import { NextPage } from 'next'
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import Link from 'next/link';
 
-import Link from 'next/link'
+interface Props {
+  message: string
+}
 
-const Product: FunctionComponent = () => { 
+const Product: NextPage<Props> = ({ message }) => { 
   const router = useRouter();
-  useEffect(() => {
-    fetch("http://localhost:3000/api/hello").then(response => response.json()).then(data => {
-      console.log(data);
-    });
-  }, []);
   return (
     <div>
       <Head>
@@ -20,10 +18,17 @@ const Product: FunctionComponent = () => {
       </Head>
       <main>
         <h1>Product {router.query.id}</h1>
+        <p>{ message }</p>
         <p><Link href="/shop">Назад</Link></p>
       </main>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  let response = await fetch("http://localhost:3000/api/hello");
+  let data = await response.json();
+  return { props: { message: data.message } }
 }
 
 export default Product;
