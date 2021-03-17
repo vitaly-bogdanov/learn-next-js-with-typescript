@@ -1,6 +1,6 @@
 import ClientLayout from '../../layouts/ClientLayout';
 import { NextPage } from 'next';
-import TTodo from '../../types/TTodos';
+import TTodo from '../../types/TTodo';
 import styles from './index.module.scss';
 
 interface Props {

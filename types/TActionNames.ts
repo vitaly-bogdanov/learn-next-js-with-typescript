@@ -1,0 +1,1 @@
+export type TTODOS_ACTION = 'TODOS_ACTION';
