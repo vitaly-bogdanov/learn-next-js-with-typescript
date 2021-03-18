@@ -10,8 +10,9 @@ const initialState: TTodosState = {
   loaded: false
 }
 
-type T = TTODOS_ACTION;
-type P = { todos: TTodo[] };
+// add types
+type T = TTODOS_ACTION; // | SOME_TYPE_1 | SOME_TYPE_2 | SOME_TYPE_3
+type P = { todos: TTodo[] }; // SOME_TYPE_4 | SOME_TYPE_5 | SOME_TYPE_6
 
 const todosReducer = (state: TTodosState = initialState, action: TAction<T, P>): TTodosState => {
   switch (action.type) {

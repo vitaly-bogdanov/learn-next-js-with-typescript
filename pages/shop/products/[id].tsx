@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import Link from 'next/link';
+import apiHello from '../../../apiMethods/apiHello';
 
 interface Props {
   message: string
@@ -26,9 +26,8 @@ const Product: NextPage<Props> = ({ message }) => {
 }
 
 export async function getServerSideProps() {
-  let response = await fetch("http://localhost:3000/api/hello");
-  let data = await response.json();
-  return { props: { message: data.message } }
+  const message = await apiHello();
+  return { props: { message } }
 }
 
 export default Product;
